@@ -183,7 +183,8 @@ class Emplacement(Base):
 class Emprunteur(Base):
     __tablename__ = u"borrower"
 
-    id_book_list = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("book_list.id"), primary_key=True, autoincrement=True)
+    id = sqlalchemy.Column(sqlalchemy.Integer(), primary_key=True, autoincrement=True)
+    id_book_list = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("book_list.id"))
     borrower = sqlalchemy.Column(StrippedUnicode()) 
     borrowing_date = sqlalchemy.Column(sqlalchemy.DateTime())
 
