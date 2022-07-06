@@ -16,6 +16,7 @@ import sqlalchemy.pool
 import sqlalchemy.types
 import urllib
 
+
 def make_sql_session (odbc_driver, odbc_dsn):
     #engine = sqlalchemy.create_engine(config.DB_DSN, poolclass=sqlalchemy.pool.NullPool)
     dsn = "{}:///?odbc_connect={}".format(urllib.quote_plus(odbc_driver, odbc_dsn))
@@ -135,11 +136,11 @@ class Bibliotheque_Auteur(Base):
     id = sqlalchemy.Column(sqlalchemy.Integer(), primary_key=True, autoincrement=True)
     name_author = sqlalchemy.Column(StrippedUnicode())
 
-class AuteurBibliotheque(Base):
+class Bibliotheque_AuteurBibliotheque(Base):
     __tablename__ = u"bibliotheque_author_book_list"
 
-    id_book_list = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("bibliotheque_book_list.id"), primary_key=True, autoincrement=True)
-    id_author = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("bibliotheque_author.id"), primary_key=True, autoincrement=True)
+    id_book_list = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("bibliotheque_book_list.id"), primary_key=True)
+    id_author = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("bibliotheque_author.id"), primary_key=True)
 
 class Bibliotheque(Base):
     __tablename__ = u"bibliotheque_book_list"
