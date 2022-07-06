@@ -200,8 +200,8 @@ class Bibliotheque_Job(Base):
 class Bibliotheque_JobAuteur(Base):
     __tablename__ = u"bibliotheque_job_author"
 
-    id_job = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("bibliotheque_job.id"), primary_key=True, autoincrement=True)
-    id_author = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("bibliotheque_author.id"), primary_key=True, autoincrement=True) 
+    id_job = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("bibliotheque_job.id"), primary_key=True)
+    id_author = sqlalchemy.Column(sqlalchemy.Integer(), sqlalchemy.ForeignKey("bibliotheque_author.id"), primary_key=True) 
 
 class Bibliotheque_Proprietaire(Base):
     __tablename__ = u"bibliotheque_owner"
