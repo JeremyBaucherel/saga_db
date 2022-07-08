@@ -231,6 +231,8 @@ class Bluray(Base):
     Bluray_Coffret = sqlalchemy.orm.relation("Bluray_Coffret", lazy='joined')
     Bluray_Proprietaire = sqlalchemy.orm.relation("Bluray_Proprietaire", lazy='joined')
     Bluray_Emplacement = sqlalchemy.orm.relation("Bluray_Emplacement", lazy='joined')
+    Bluray_Emprunteur = sqlalchemy.orm.relation("Bluray_Emprunteur", lazy='joined')
+
 
 class Bluray_Coffret(Base):
     __tablename__ = u"bluray_coffret"
