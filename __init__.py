@@ -272,3 +272,30 @@ class Bluray_Proprietaire(Base):
 
     id = sqlalchemy.Column(sqlalchemy.Integer(), primary_key=True, autoincrement=True)
     name_owner = sqlalchemy.Column(StrippedUnicode())  
+
+
+## NAS ##
+
+class Nas_Film(Base):
+    __tablename__ = u"nas_film"
+
+    id = sqlalchemy.Column(sqlalchemy.Integer(), primary_key=True, autoincrement=True)
+    genre = sqlalchemy.Column(StrippedUnicode())
+    title_title = sqlalchemy.Column(StrippedUnicode())
+    title_vo_title = sqlalchemy.Column(StrippedUnicode())
+    year_title = sqlalchemy.Column(sqlalchemy.Integer())
+    info_sup_title = sqlalchemy.Column(StrippedUnicode())
+    codec_video_tag = sqlalchemy.Column(StrippedUnicode())
+    codec_audio_tag = sqlalchemy.Column(StrippedUnicode())
+    frame_hight_title = sqlalchemy.Column(sqlalchemy.Integer())
+    frame_hight_tag = sqlalchemy.Column(sqlalchemy.Integer())
+    frame_width_tag = sqlalchemy.Column(sqlalchemy.Integer())
+    duration_tag = sqlalchemy.Column(sqlalchemy.Numeric())
+    size = sqlalchemy.Column(sqlalchemy.Numeric()) 
+    date_modification = sqlalchemy.Column(sqlalchemy.DateTime())
+    file_path = sqlalchemy.Column(StrippedUnicode())
+
+class Nas_Serie(Base):
+    __tablename__ = u"nas_serie"
+
+    id = sqlalchemy.Column(sqlalchemy.Integer(), primary_key=True, autoincrement=True)
